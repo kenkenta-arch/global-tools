@@ -1,0 +1,83 @@
+:root {
+  color-scheme: light dark;
+  --background: #f6f7f2;
+  --surface: #fff;
+  --ink: #172721;
+  --muted: #465a52;
+  --accent: #155744;
+  --line: #cdd8cf;
+  --wash: #e7efe7;
+  font-family: system-ui, sans-serif;
+  line-height: 1.65;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #111b17;
+    --surface: #1a2822;
+    --ink: #f0f6ef;
+    --muted: #bbcfc3;
+    --accent: #a3e0bf;
+    --line: #40574c;
+    --wash: #20362b;
+  }
+}
+* { box-sizing: border-box; }
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  background: var(--background);
+  color: var(--ink);
+}
+a { color: var(--accent); text-underline-offset: .22em; }
+a:hover { text-decoration-thickness: .14em; }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+.wrap { width: min(100% - 2.5rem, 65rem); margin-inline: auto; }
+.site-header { border-bottom: 1px solid var(--line); background: var(--surface); }
+.wordmark {
+  display: inline-flex;
+  align-items: center;
+  min-height: 3.75rem;
+  gap: .65rem;
+  color: var(--ink);
+  text-decoration: none;
+  font-weight: 750;
+  letter-spacing: -.02em;
+}
+.wordmark::before {
+  content: "";
+  display: inline-block;
+  width: .8rem;
+  height: .8rem;
+  border: 2px solid var(--accent);
+  border-radius: .22rem;
+  transform: rotate(45deg);
+}
+main { flex: 1; padding-block: clamp(2.5rem, 8vw, 6rem); }
+h1, h2, p { margin: 0; }
+h1, h2 { line-height: 1.15; }
+h1 {
+  max-width: 18ch;
+  font-size: clamp(2.55rem, 8vw, 5.4rem);
+  letter-spacing: -.065em;
+}
+h2 { font-size: clamp(1.3rem, 3vw, 1.8rem); letter-spacing: -.035em; }
+.lede { max-width: 53ch; margin-top: 1rem; color: var(--muted); font-size: 1.125rem; }
+.tool-list { margin-top: clamp(2rem, 6vw, 4rem); }
+.empty {
+  margin-top: .9rem;
+  padding: clamp(1.15rem, 4vw, 2.25rem);
+  border: 1px solid var(--line);
+  border-radius: .85rem;
+  background: var(--wash);
+  color: var(--muted);
+}
+.prose { max-width: 65ch; }
+.prose h1 { margin-bottom: 1.5rem; }
+.prose h2 { margin-top: 1.8rem; }
+.prose p + p, .prose h2 + p { margin-top: .65rem; }
+.site-footer { border-top: 1px solid var(--line); background: var(--surface); }
+.footer-content { display: flex; flex-wrap: wrap; align-items: center; gap: 0 1.8rem; }
+.site-footer nav { display: flex; flex-wrap: wrap; gap: 0 1.25rem; }
+.site-footer nav a { display: inline-flex; align-items: center; min-height: 2.75rem; }
