@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kenkenta-arch.github.io/global-tools/sitemap.xml
